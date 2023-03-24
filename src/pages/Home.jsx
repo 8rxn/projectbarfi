@@ -1,9 +1,16 @@
-import React from 'react'
+import React from "react";
+import HeroSection from "../components/HeroSection/HeroSection";
+import Features from "../components/Features/Features";
+import TopGames from "../components/Games/TopGames";
 
 function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <HeroSection />
+      <Features />
+      <TopGames />
+    </>
+  );
 }
 
-export default Home
+export default Home;
