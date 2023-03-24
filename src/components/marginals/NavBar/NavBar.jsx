@@ -4,6 +4,8 @@ import Button from "../../shared/Button"
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [checked, setChecked] = useState(false);
+  const [checkedStreak, setCheckedStreak] = useState(11);
 
   return (
     <nav className="bg-bg-primary text-color-primary h-20">
@@ -25,7 +27,7 @@ function Navbar() {
           <a href="/contact" className="hover:text-color-secondary">
             Contact
           </a>
-          <Button>Register</Button>
+          <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
         </div>
 
         <button
@@ -62,7 +64,7 @@ function Navbar() {
             <a href="/contact" className="block hover:text-color-secondary">
               Contact
             </a>
-            <Button>Register</Button>
+            <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
           </div>
         </div>
       </div>
