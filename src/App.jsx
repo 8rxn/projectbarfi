@@ -3,12 +3,14 @@ import "./App.css";
 import Button from "./components/shared/Button";
 import { Route, Routes } from "react-router";
 import { Clan, Friends, Home } from "./pages";
+import NavBar from "../src/components/marginals/NavBar/NavBar"
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      <NavBar/>
       <Routes>
         <Route
           path="/"
