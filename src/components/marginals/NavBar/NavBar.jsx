@@ -29,6 +29,7 @@ function Navbar({toggleProfile}) {
             FAQ
           </a>
           <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
+          <button className="border-color-primary rounded-full border-[2px] p-[3px]"><img src={images.Profile.src} alt={images.Profile.alt} className="w-[30px] rounded-full"/></button>
         </div>
 
         <button
@@ -66,6 +67,7 @@ function Navbar({toggleProfile}) {
               Profile
             </a>
             <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
+            <button className="border-color-primary rounded-full border-[2px] p-[3px]"><img src={images.Profile.src} alt={images.Profile.alt} className="w-[30px] rounded-full"/></button>
           </div>
         </div>
       </div>

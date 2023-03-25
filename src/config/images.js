@@ -35,4 +35,8 @@ export default {
       src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679678865/Hack-36/FAQ-05_eh6l1x.png",
       alt: "FAQ",
     },
+    Profile: {
+      src: "https://res.cloudinary.com/dlvmyc0x3/image/upload/v1679743192/Fotor_AI_2_f6pkte.jpg",
+      alt: "Profile-icon"
+    }
 };
