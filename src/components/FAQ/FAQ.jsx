@@ -4,34 +4,34 @@ import images from "../../config/images";
 
 const faqs = [
   {
-    question: "What is your return policy?",
+    question: "What is TribeTango?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "TribeTango is a platform that helps gamers to connect with each other, chat, have fun and play games with the community by joining groups aka clans of the particular game. We also offer NFTs to users.",
   },
   {
-    question: "What is your return policy?",
+    question: "Is TribeTango completely free to use?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "Yes, TribeTango is completely free to use, but we also offer in-app purchases to help you stand out among others in the gaming community.",
   },
   {
-    question: "What is your return policy?",
+    question: "How do I earn NFTs from the TribeTango?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "You can earn NFTs from our website by completing certain tasks that we have set up. These tasks could be anything like being promoted or maintaining streaks with your other users or even daily check-ins. We also have a few unique NFTs that you can buy from our website, these NFTs are exclusive and can only be obtained by purchasing them from our platform.",
   },
   {
-    question: "What is your return policy?",
+    question: "What is this daily check-ins systems?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "We offer a daily check-in system that rewards users with various perks such as in-game titles, streaks, and other bonuses like NFTs. So, make sure to check-in every day to reap the benefits.",
   },
   {
-    question: "What is your return policy?",
+    question: "How do I join a Clan for a particular game?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "To join a clan for a particular game you can search for it in Games section of the website and join from there. If you don't see a clan for a game of your choice then you can mail us to add it.",
   },
   {
-    question: "What is your return policy?",
+    question: "What is this title system in TribeTango",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed viverra enim ipsum, ut consectetur nulla blandit vel. Nulla varius elit at justo placerat pharetra. Sed convallis ullamcorper nisl vitae aliquam.",
+      "Based on your activity, you will get a title. Till now we have only 3 title (NPC, Muggle and Wizard). When you join our community for the first time, you join as a Non-Performing Character (NPC) and as you do the tasks you will get promoted to Muggle and then Wizard.",
   },
 ];
 
