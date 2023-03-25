@@ -12,7 +12,7 @@ function HeroSection() {
         </p>
         <Button className="">Join Clan</Button>
       </div>
-        <img src={images.Hero.src} alt={images.Hero.alt} className="md-4/5 md:w-2/5 animate-wiggle"/>
+        <img src={images.Hero.src} alt={images.Hero.alt} className="md-4/5 md:w-2/5 relative animate-wiggle"/>
         <img src={images.Bg.src} alt={images.Bg.alt} className="absolute top-[70%] md:top-[50%] lg:top-[30%]"/>
     </div>
   );
