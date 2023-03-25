@@ -1,8 +1,11 @@
+import { useAuth } from "@arcana/auth-react";
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import images from "../../config/images";
+import { useEffect } from "react";
 
-const Profile = ({ toggleProfile }) => {
+const Profile = ({ toggleProfile, name }) => {
+
   return (
     <div className="w-[80%] h-[90%] rounded-2xl  bg-bg-primary md:overflow-hidden overflow-y-scroll">
       <div
@@ -23,7 +26,7 @@ const Profile = ({ toggleProfile }) => {
               />
             </div>
             <h2 className="text-2xl lg:text-3xl text-color-primary font-bold py-5 text-center">
-              ProfileName
+              {name}
             </h2>
           </div>
 
