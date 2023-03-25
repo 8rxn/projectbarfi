@@ -2,12 +2,12 @@ import { useState } from "react";
 import images from "../../../config/images"
 import Button from "../../shared/Button"
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
-import { useAuth } from "@arcana/auth-react";
-import { ethers } from "ethers";
-import { checkInContractABI } from "../../../../contracts/ABI-Exports";
+// import { useEffect } from "react";
+// import { useAuth } from "@arcana/auth-react";
+// import { ethers } from "ethers";
+// import { checkInContractABI } from "../../../../contracts/ABI-Exports";
 
-function Navbar({toggleProfile, checked, checkedStreak, checkinButton}) {
+function Navbar({toggleProfile, checked, checkedStreak, checkinButton, address}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   
