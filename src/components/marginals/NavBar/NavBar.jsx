@@ -2,7 +2,7 @@ import { useState } from "react";
 import images from "../../../config/images"
 import Button from "../../shared/Button"
 
-function Navbar() {
+function Navbar({toggleProfile}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
@@ -22,8 +22,8 @@ function Navbar() {
           <a href="/services" className="hover:text-color-secondary">
             Services
           </a>
-          <a href="/contact" className="hover:text-color-secondary">
-            Contact
+          <a href="#" onClick={toggleProfile} className="hover:text-color-secondary">
+            Profile
           </a>
           <Button>Register</Button>
         </div>
