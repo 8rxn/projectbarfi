@@ -1,6 +1,7 @@
 import { useState } from "react";
 import images from "../../../config/images"
 import Button from "../../shared/Button"
+import { Link } from "react-router-dom";
 
 function Navbar({toggleProfile}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,17 +16,17 @@ function Navbar({toggleProfile}) {
           <span className="ml-2 font-bold text-xl">TribeTango</span>
         </a>
         <div className="hidden md:flex items-center gap-x-10">
-          <a href="/" className="hover:text-color-secondary">
+          <Link to="/" className="hover:text-color-secondary">
             Home
+          </Link>
+          <a href="#features" className="hover:text-color-secondary">
+            Features
           </a>
-          <a href="/about" className="hover:text-color-secondary">
-            About
+          <a href="#games" className="hover:text-color-secondary">
+            Top Games
           </a>
-          <a href="/services" className="hover:text-color-secondary">
-            Services
-          </a>
-          <a href="#" onClick={toggleProfile} className="hover:text-color-secondary">
-            Profile
+          <a href="#faq" className="hover:text-color-secondary">
+            FAQ
           </a>
           <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
         </div>
