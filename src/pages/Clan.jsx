@@ -32,7 +32,7 @@ function Clan() {
             </div>
             <div className='w-[100%] flex sm:flex-row items-center flex-col md:gap-10 sm:gap-5 gap-2'>
             <input id="#chatinput" placeholder='Your Message' className='bg-bg-secondary md:h-[70%] h-[50%] w-full rounded-2xl border-color-primary border-2 md:text-xl text-md font-semibold p-8 text-color-primary'/>
-            <button className='border-2 rounded-2xl border-color-primary text-color-primary md:text-xl text-md h-[70%]  hover:bg-gradient-to-r from-color-primary to-color-secondary hover:text-bg-primary hover:font-bold md:w-40 w-32 py-2 px-5 '> Send <AiOutlineSend className=' inline-block  ' /> </button>
+            <button className='border-2 rounded-2xl border-color-primary text-color-primary md:text-xl text-md h-[70%]  hover:bg-gradient-to-r from-color-primary to-color-secondary hover:text-bg-primary hover:font-bold md:w-40 w-32 py-2 px-5 ease-in duration-150 '> Send <AiOutlineSend className=' inline-block  ' /> </button>
             </div>
 
             </div>
