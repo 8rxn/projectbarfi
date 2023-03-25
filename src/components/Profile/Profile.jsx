@@ -32,7 +32,7 @@ const Profile = ({ toggleProfile, name }) => {
             </h2>
           </div>
 
-          {["Bumps:", "Friends:", "Clans:"].map((item) => (
+          {["Bumps: 62", "Friends: 34", "Clans: 2"].map((item) => (
             <div>
               <h2 className="text-lg lg:text-2xl text-color-primary font-[500] py-0 sm:py-1 md:py-3">
                 {item}
