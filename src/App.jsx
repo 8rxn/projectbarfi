@@ -12,6 +12,7 @@ function App() {
   };
   const [count, setCount] = useState(0);
   const [profileActive, setProfileActive] = useState(false);
+  const[loginState, setLoginState] = useState(false);
   const auth = useAuth();
   const toggleProfile = useCallback(() => {
     setProfileActive(!profileActive);
@@ -24,19 +25,17 @@ function App() {
       <div className={` h-screen z-10 fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] grid place-items-center w-[100vw] shadow dark:bg-white/5 ${!profileActive?"hidden":""} `}>
       <Profile toggleProfile={toggleProfile}/>
       </div>
-      <div className=" h-screen w-screen fixed left-0 top-0 z-50 backdrop-blur-md ">
-      <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] back  filter-none  ">
+      {!loginState && <div className=" h-screen w-screen fixed left-0 top-0 z-50 backdrop-blur-md">
+      <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] filter-none">
       {auth.loading ? (
         "Loading"
-        ) : auth.isLoggedIn ? (
-          <p>Logged In</p>
-          ) : (
+        ) : auth.isLoggedIn ? setLoginState(true) : (
             <div>
           <Auth externalWallet={false} theme={"dark"} onLogin={onLogin}/>
         </div>
       )}
       </div>
-      </div>
+      </div>}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
