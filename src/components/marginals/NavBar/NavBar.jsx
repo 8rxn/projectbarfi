@@ -60,7 +60,9 @@ function Navbar({toggleProfile, checked, checkedStreak, checkinButton}) {
           <a href="#faq" className="hover:text-color-secondary">
             FAQ
           </a>
-          <Button onClick={checkinButton}>{checked ? `🔥${checkedStreak} Days` : `Check In!`}</Button>
+          <div onClick={()=>{checkinButton()}}>
+          <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!`}</Button>
+          </div>
           <button className="border-color-primary rounded-full border-[2px] p-[3px]" onClick={toggleProfile}><img src={images.Profile.src} alt={images.Profile.alt} className="w-[30px] rounded-full"/></button>
         </div>
 

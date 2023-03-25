@@ -66,7 +66,6 @@ function App() {
   }
 
   async function startcheckIn() {
-    console.log("checkIn Start!");
     const arcanaProvider = await auth.connect();
     const provider = new ethers.providers.Web3Provider(arcanaProvider);
     const signer = provider.getSigner();
@@ -84,7 +83,7 @@ function App() {
   }
 
   function checkinButton() {
-    if(checked) {
+    if(checked===true) {
       getLastChecked();
     }
     else {
@@ -95,7 +94,7 @@ function App() {
   useEffect(() => {
     onStart();
     getLastChecked();
-})
+},[])
   
 
   return (
