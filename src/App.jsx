@@ -6,6 +6,9 @@ import NavBar from "../src/components/marginals/NavBar/NavBar";
 import { useAuth, Auth } from "@arcana/auth-react";
 import Profile from "./components/Profile/Profile";
 
+import {useCollectionData} from "react-firebase-hooks/firestore"
+
+
 function App() {
   const onLogin = () => {
     // Route to authenticated page
@@ -48,7 +51,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/comrade" element={<Friends />} />
-        <Route path="/clan" element={<Clan />} />
+        <Route path="/clan/:id" element={<Clan />} />
         <Route path="/*" element={<NotYet />} />
         {/* This will be default path when login will be setup */}
         <Route path="/home" element={<Home />} />

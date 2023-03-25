@@ -9,7 +9,7 @@ function TopGames() {
           <h2 className="text-4xl sm:text-5xl font-bold">Top Games</h2>
           <div className="h-[3px] w-[120%] bg-color-primary mt-[2px] rounded-xl"></div>
         </div>
-        <div className="my-auto"><Carousel/></div>
+        <div className="my-auto "><Carousel/></div>
       </div>
     </div>
   );
