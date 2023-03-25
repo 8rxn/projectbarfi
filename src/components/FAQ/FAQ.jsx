@@ -38,7 +38,7 @@ const faqs = [
 function FAQ() {
   const [activeQuestionIndex, setActiveQuestionIndex] = useState(-1);
   return (
-    <div className="box-border min-h-screen bg-gradient-to-t from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col justify-start items-center md:justify-center p-4">
+    <div className="box-border min-h-fit md:min-h-screen bg-gradient-to-t from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col justify-start items-center md:justify-center p-4 pb-9 md:pb-4">
       <div className="flex flex-col justify-center items-center p-8 gap-8">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-4xl sm:text-5xl font-bold">FAQS</h2>
