@@ -1,6 +1,8 @@
 import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import images from "../../config/images";
+import NFTCards from "../NFTCards/NFTCards";
+import Card from "./ClanCard";
 
 const Profile = ({ toggleProfile }) => {
   return (
@@ -36,13 +38,59 @@ const Profile = ({ toggleProfile }) => {
           ))}
         </div>
         <div className="h-full w-[100%] md:w-[80%] flex flex-col gap-5">
-          <div className="bg-bg-secondary h-[100%] md:h-[40%] rounded-3xl border-color-primary border-2">
-            <h2 className="text-2xl sm:text-4xl font-bold text-color-primary m-5">Clans</h2>
+          <div className="bg-bg-secondary h-[100%] md:h-[40%] rounded-3xl border-color-primary border-2 p-5">
+            <h2 className="text-2xl sm:text-4xl font-bold text-color-primary mb-3">
+              Clans
+            </h2>
+            <div className="flex flex-col lg:flex-row h-[80%] sm:h-[60%] gap-2 p-4 sm:p-1 overflow-x-hidden md:overflow-x-auto overflow-y-auto lg:overflow-y-hidden">
+              <Card text={"BGMI"} />
+              <Card text={"FreeFire"} />
+              <Card text={"Valorant"} />
+            </div>
           </div>
-          <div className="bg-bg-secondary h-[60%] rounded-3xl border-color-primary border-2">
-            <h2 className="text-2xl sm:text-4xl font-bold text-color-primary m-5">
+          <div className="bg-bg-secondary h-[80%] sm:h-[60%] rounded-3xl border-color-primary border-2 p-5">
+            <h2 className="text-2xl sm:text-4xl font-bold text-color-primary mb-3">
               Your NFTs
             </h2>
+            <div className="flex flex-col h-[80%] w-full overflow-y-scroll p-4 sm:p-1 gap-2">
+              <NFTCards
+                name={"Pupil"}
+                desc={"Levelled up to become a Muggle"}
+              />
+              <NFTCards
+                name={"Well Seasoned"}
+                desc={"Levelled up to become a wizard"}
+              />
+              <NFTCards
+                name={"The Lurker"}
+                desc={"Made a check-in streak of 30 days"}
+              />
+              <NFTCards
+                name={"Master Bump-er"}
+                desc={"Made a bump streak for 15 days"}
+              />
+              <NFTCards
+                name={"Social Butterfly"}
+                desc={"Messaged daily in a clan for 7 days straight"}
+              />
+              <NFTCards
+                name={"The Chatterbox"}
+                desc={"Spent a total of 100 hours chatting in clan"}
+              />
+              <NFTCards
+                name={"The Chatty Cathy"}
+                desc={"Active for 7 days in three clans"}
+              />
+              <NFTCards
+                name={"Trend-Setter"}
+                desc={"Helped to introduce a new game"}
+              />
+              <NFTCards name={"Master Minter"} desc={"Win all free NFTs"} />
+              <NFTCards
+                name={"Big Spender"}
+                desc={"Bought an NFT through in-app purchases"}
+              />
+            </div>
           </div>
         </div>
       </div>
