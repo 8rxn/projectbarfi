@@ -46,9 +46,9 @@ const Profile = ({ toggleProfile, name }) => {
               Clans
             </h2>
             <div className="flex flex-col lg:flex-row h-[80%] sm:h-[60%] gap-2 p-4 sm:p-1 overflow-x-hidden md:overflow-x-auto overflow-y-auto lg:overflow-y-hidden">
-              <Card text={"BGMI"} />
-              <Card text={"FreeFire"} />
-              <Card text={"Valorant"} />
+              <Card text={"BGMI"} link={"bgmi"} toggleProfile={toggleProfile} />
+              <Card text={"FreeFire"} link={"freefire"} toggleProfile={toggleProfile}/>
+              <Card text={"Valorant"} link={"valorant"} toggleProfile={toggleProfile}/>
             </div>
           </div>
           <div className="bg-bg-secondary h-[80%] sm:h-[60%] rounded-3xl border-color-primary border-2 p-5">

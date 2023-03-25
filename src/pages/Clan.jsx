@@ -28,7 +28,7 @@ function Clan() {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { id } = useParams();
-  const clanRef = collection(db, `bgmi`);
+  const clanRef = collection(db, `${id}`);
   const q = query(clanRef, orderBy("createdAt"), limit(25));
 
   const senderName="raj";
