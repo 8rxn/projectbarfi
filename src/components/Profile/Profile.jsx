@@ -17,7 +17,7 @@ const Profile = ({ toggleProfile }) => {
           <div className="flex items-center flex-col justify-center">
             <div className="rounded-full border-color-primary border-2 border-spacing-64 p-auto grid place-items-center w-[150px] aspect-square">
               <img
-                src={images.FAQ.src}
+                src={images.Profile.src}
                 alt=""
                 className="rounded-full w-[90%] aspect-square p-1"
               />
