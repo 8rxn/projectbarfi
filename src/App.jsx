@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import "./App.css";
 import { Route, Routes } from "react-router";
-import { Clan, Friends, Home } from "./pages";
+import { Clan, Friends, Home, NotYet } from "./pages";
 import NavBar from "../src/components/marginals/NavBar/NavBar";
 import { useAuth, Auth } from "@arcana/auth-react";
 import Profile from "./components/Profile/Profile";
@@ -94,26 +94,34 @@ function App() {
     <>
       <NavBar toggleProfile={toggleProfile} checked={checked} checkedStreak={checkedStreak} checkinButton={checkinButton} />
 
-      <div className={` h-screen z-10 fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] grid place-items-center w-[100vw] shadow dark:bg-white/5 ${!profileActive?"hidden":""} `}>
-      <Profile toggleProfile={toggleProfile} name={username}/>
+      <div
+        className={` h-screen z-40 fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] grid place-items-center w-[100vw] shadow dark:bg-white/10 ${
+          !profileActive ? "hidden" : ""
+        } `}
+      >
+        <Profile toggleProfile={toggleProfile} name={username} />
       </div>
-      {!loginState && <div className=" h-screen w-screen fixed left-0 top-0 z-50 backdrop-blur-md">
-      <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] filter-none">
-      {auth.loading ? (
-        "Loading"
-        ) : auth.isLoggedIn ? setLoginState(true) : (
-            <div>
-          <Auth externalWallet={false} theme={"dark"} onLogin={onLogin}/>
+      {!loginState && (
+        <div className=" h-screen w-screen fixed left-0 top-0 z-50 backdrop-blur-xl">
+          <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] filter-none">
+            {auth.loading ? (
+              "Loading"
+            ) : auth.isLoggedIn ? (
+              setLoginState(true)
+            ) : (
+              <div>
+                <Auth externalWallet={false} theme={"dark"} onLogin={onLogin} />
+              </div>
+            )}
+          </div>
         </div>
       )}
-      </div>
-      </div>}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/comrade" element={<Friends />} />
         <Route path="/clan" element={<Clan />} />
-
+        <Route path="/*" element={<NotYet />} />
         {/* This will be default path when login will be setup */}
         <Route path="/home" element={<Home />} />
       </Routes>

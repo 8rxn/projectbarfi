@@ -27,9 +27,29 @@ export default {
       src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679678865/Hack-36/Features-4-05_erunkt.png",
       alt: "Features-4",
     },
-    PUBGgame: {
-      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679678865/Hack-36/Game-PUBG-05_th4v0x.png",
-      alt: "PUBG-Games",
+    BGMI: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679755374/Hack-36/BattleField_mkvzyu.jpg",
+      alt: "BattleField Game",
+    },
+    FreeFire: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679755397/Hack-36/FreeFire_hqh3io.jpg",
+      alt: "FreeFire-Game",
+    },
+    Valorant: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679755388/Hack-36/Valorent_zc7nkb.jpg",
+      alt: "Valorant-Game",
+    },
+    ClashofClans: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679755374/Hack-36/CoC_kmxp3p.jpg",
+      alt: "CoC-Game",
+    },
+    GTA: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679756123/Hack-36/GTA_eynsn8.jpg",
+      alt: "GTA-Game"
+    },
+    SmashKarts: {
+      src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679755388/Hack-36/Smash_qg9jrk.jpg",
+      alt: "SmashKarts-Game"
     },
     FAQ: {
       src: "https://res.cloudinary.com/dmofs5r4h/image/upload/v1679678865/Hack-36/FAQ-05_eh6l1x.png",

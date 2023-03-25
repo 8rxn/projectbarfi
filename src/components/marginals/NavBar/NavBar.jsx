@@ -86,20 +86,20 @@ function Navbar({toggleProfile, checked, checkedStreak, checkinButton}) {
           } md:hidden absolute top-20 left-0 right-0 bg-bg-secondary z-30 h-screen flex flex-col items-center`}
         >
           <div className="flex flex-col items-center gap-y-9 pt-12">
-            <a href="/" className="block hover:text-color-secondary">
+            <Link to='/' className="block hover:text-color-secondary" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               Home
+            </Link>
+            <a href="#features" className="block hover:text-color-secondary">
+              Features
             </a>
-            <a href="/about" className="block hover:text-color-secondary">
-              About
+            <a href="#games" className="block hover:text-color-secondary">
+              Top Games
             </a>
-            <a href="/services" className="block hover:text-color-secondary">
-              Services
-            </a>
-            <a href="#" onClick={toggleProfile} className="hover:text-color-secondary">
-              Profile
+            <a href="#faq" className="hover:text-color-secondary">
+              FAQs
             </a>
             <Button onClick={checkinButton}>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
-            <button className="border-color-primary rounded-full border-[2px] p-[3px]"><img src={images.Profile.src} alt={images.Profile.alt} className="w-[30px] rounded-full"/></button>
+            <button className="border-color-primary rounded-full border-[2px] p-[3px]"><img src={images.Profile.src} alt={images.Profile.alt} className="w-[30px] rounded-full" onClick={toggleProfile}/></button>
           </div>
         </div>
       </div>

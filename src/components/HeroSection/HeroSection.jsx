@@ -13,7 +13,7 @@ function HeroSection() {
           JOIN A CLAN AND LEVEL UP YOUR GAMING JOURNEY
         </p>
         <div className="z-10">
-          <Button>Join Clan</Button>
+          <Button><a href="#games">Join Clan</a></Button>
         </div>
       </div>
       <img
