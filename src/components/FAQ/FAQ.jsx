@@ -16,7 +16,7 @@ const faqs = [
   {
     question: "How do I earn NFTs from the TribeTango?",
     answer:
-      "You can earn NFTs from our website by completing certain tasks that we have set up. These tasks could be anything like being promoted or maintaining streaks with your other users or even daily check-ins. We also have a few unique NFTs that you can buy from our website, these NFTs are exclusive and can only be obtained by purchasing them from our platform.",
+      "You can earn NFTs from our website by completing certain tasks that we have set up. These tasks could be anything like being promoted or maintaining streaks with other users or even daily check-ins. We also have a few unique NFTs that you can buy from our website, these NFTs are exclusive and can only be obtained by purchasing them from our platform.",
   },
   {
     question: "What is this daily check-ins systems?",
