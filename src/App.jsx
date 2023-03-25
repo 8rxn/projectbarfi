@@ -9,14 +9,11 @@ import { useEffect } from "react";
 import { Contract, ethers } from "ethers";
 import { checkInContractABI } from "../contracts/ABI-Exports";
 
-import {useCollectionData} from "react-firebase-hooks/firestore"
-
 
 function App() {
   const onLogin = async () => {
     console.log("Hello")
   };
-  const [count, setCount] = useState(0);
   const [profileActive, setProfileActive] = useState(false);
   const[loginState, setLoginState] = useState(false);
   const[username,setUserName] = useState('Loading...');
@@ -127,7 +124,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/comrade" element={<Friends />} />
-        <Route path="/clan/:id" element={<Clan />} />
+        <Route path="/clan/:id" name={username} publicKey={address} element={<Clan />} />
         <Route path="/*" element={<NotYet />} />
         {/* This will be default path when login will be setup */}
         <Route path="/home" element={<Home />} />

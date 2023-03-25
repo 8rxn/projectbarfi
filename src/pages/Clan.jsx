@@ -13,10 +13,10 @@ import {
   serverTimestamp,setDoc
 } from "firebase/firestore";
 
-function Message({item}) {
+function Message({item,senderPublicKey}) {
   return (
     <>
-      <h2>{item?.name}</h2>
+      <h2>{item?.publicKey===senderPublicKey?"You":item?.name}</h2>
       <h3>{item?.role && item?.role}</h3>
       {/* <h3>{new Date(item.createdAt)}</h3> */}
       <h3>{item?.text}</h3>
@@ -24,15 +24,15 @@ function Message({item}) {
   );
 }
 
-function Clan() {
+function Clan({name,publicKey}) {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { id } = useParams();
   const clanRef = collection(db, `${id}`);
   const q = query(clanRef, orderBy("createdAt"), limit(25));
 
-  const senderName="raj";
-  const senderPublicKey="1234";
+  const senderName=name;
+  const senderPublicKey=publicKey;
 
 
   //   const getData = async () => {
@@ -103,7 +103,7 @@ function Clan() {
           </h2>
           <div className="flex flex-col bg-white">
             {messages.map((item) => (
-              <Message key={item.id} item={item}></Message>
+              <Message key={item.id} item={item} senderPublicKey={senderPublicKey}></Message>
             ))}
           </div>
         </div>
