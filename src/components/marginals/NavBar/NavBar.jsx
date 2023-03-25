@@ -40,8 +40,8 @@ function Navbar({toggleProfile}) {
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M4 6H20V8H4V6ZM4 11H20V13H4V11ZM4 16H20V18H4V16Z"
             />
           </svg>
@@ -49,7 +49,7 @@ function Navbar({toggleProfile}) {
         <div
           className={`${
             isMobileMenuOpen ? "block" : "hidden"
-          } md:hidden absolute top-20 left-0 right-0 bg-bg-secondary z-50 h-screen flex flex-col items-center`}
+          } md:hidden absolute top-20 left-0 right-0 bg-bg-secondary z-30 h-screen flex flex-col items-center`}
         >
           <div className="flex flex-col items-center gap-y-9 pt-12">
             <a href="/" className="block hover:text-color-secondary">
@@ -61,8 +61,8 @@ function Navbar({toggleProfile}) {
             <a href="/services" className="block hover:text-color-secondary">
               Services
             </a>
-            <a href="/contact" className="block hover:text-color-secondary">
-              Contact
+            <a href="#" onClick={toggleProfile} className="hover:text-color-secondary">
+              Profile
             </a>
             <Button>{checked ? `🔥${checkedStreak} Days` : `Check In!` }</Button>
           </div>
