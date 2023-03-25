@@ -13,26 +13,26 @@ import {
   serverTimestamp,setDoc
 } from "firebase/firestore";
 
-function Message({item}) {
+function Message({item,senderPublicKey}) {
   return (
-    <>
-      <h2>{item?.name}</h2>
-      <h3>{item?.role && item?.role}</h3>
+    <div className="flex bg-bg-primary w-fit p-2 gap-2 rounded-r-xl rounded-bl-xl shadow-lg">
+      <h3 className="text-xs text-color-secondary">({item?.role?item?.role:"NPC"})</h3>
+      <h2 className="text-lg text-white">{item?.publicKey===senderPublicKey?"You":item?.name}:</h2>
       {/* <h3>{new Date(item.createdAt)}</h3> */}
-      <h3>{item?.text}</h3>
-    </>
+      <h3 className="text-color-primary">{item?.text}</h3>
+    </div>
   );
 }
 
-function Clan() {
+function Clan({name,publicKey}) {
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { id } = useParams();
-  const clanRef = collection(db, `bgmi`);
+  const clanRef = collection(db, `${id}`);
   const q = query(clanRef, orderBy("createdAt"), limit(25));
 
-  const senderName="raj";
-  const senderPublicKey="1234";
+  const senderName=name;
+  const senderPublicKey=publicKey;
 
 
   //   const getData = async () => {
@@ -61,19 +61,18 @@ function Clan() {
 
 
   const sendMessage=async()=>{
-    console.log("sendMessage")
     const sendData={
         createdAt: serverTimestamp(),
-        name: senderName ,
-        publicKey: senderPublicKey,
-        text : message
+        name: senderName || "username-undefined" ,
+        publicKey: senderPublicKey || "undefined",
+        text : message || "Message not sent due to undefined user"
     }
     await setDoc(doc(clanRef),sendData );
 
   }
 
   return (
-    <div className="h-[90vh] flex w-full bg-bg-primary gap-10 p-10">
+    <div className="h-screen flex w-full bg-bg-primary gap-10 p-10">
       <div className="h-full w-[20%] md:flex flex-col items-center justify-center bg-bg-secondary border-color-primary border-2 rounded-3xl hidden">
         <div className="flex items-center flex-col">
           <div className="rounded-full  border-color-primary border-2 border-spacing-64 p-auto grid place-items-center w-[85%] aspect-square">
@@ -96,26 +95,26 @@ function Clan() {
           </div>
         ))}
       </div>
-      <div className="h-full  md:w-[80%] w-[100%] flex flex-col gap-10">
-        <div className="bg-bg-secondary h-[90%] rounded-3xl border-color-primary border-2">
+      <div className="h-full md:w-[80%] w-[100%] flex flex-col gap-10 overflow-hidden rounded-3xl">
+        <div className="bg-bg-secondary h-[90%] rounded-3xl border-color-primary border-2 p-2 overflow-auto">
           <h2 className="md:text-4xl sm:text-2xl text-xl font-bold text-color-primary m-5">
             Chat
           </h2>
-          <div className="flex flex-col bg-white">
+          <div className="flex flex-col gap-1">
             {messages.map((item) => (
-              <Message key={item.id} item={item}></Message>
+              <Message key={item.id} item={item} senderPublicKey={senderPublicKey}></Message>
             ))}
           </div>
         </div>
-        <form className="w-[100%] flex sm:flex-row items-center flex-col md:gap-10 sm:gap-5 gap-2" onSubmit={(e)=>{e.preventDefault(); sendMessage()}}>
+        <form className="w-[100%] flex sm:flex-row items-center flex-col md:gap-10 sm:gap-5 gap-2" onSubmit={(e)=>{e.preventDefault(); if(senderName!==""){sendMessage()}else{console.error("Name is undefined. Please Login Again");}}}>
           <input
             id="#chatinput"
             placeholder="Your Message"
             value={message}
             onChange={(e)=>{setMessage(e.target.value)}}
-            className="bg-bg-secondary md:h-[70%] h-[50%] w-full rounded-2xl border-color-primary border-2 md:text-xl text-md font-semibold p-8 text-color-primary"
+            className="bg-bg-secondary md:h-[70%] h-[50%] w-full rounded-2xl border-color-primary border-2 md:text-xl text-md font-semibold p-8 text-color-primary focus:outline-none"
           />
-          <button type="submit" className="border-2 rounded-2xl border-color-primary text-color-primary md:text-xl text-md h-[70%]  hover:bg-gradient-to-r from-color-primary to-color-secondary hover:text-bg-primary hover:font-bold md:w-40 w-32 py-2 px-5 ease-in duration-150 ">
+          <button type="submit" className="border-2 rounded-2xl border-color-primary text-color-primary md:text-xl text-md h-[70%]  hover:bg-gradient-to-r from-color-primary to-color-secondary hover:text-bg-primary hover:font-bold md:w-40 w-32 py-2 px-5 ease-in duration-150 hover:border-none">
             {" "}
             Send <AiOutlineSend className=" inline-block  " />{" "}
           </button>

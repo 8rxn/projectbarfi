@@ -74,12 +74,13 @@ const Profile = ({ toggleProfile, name, address }) => {
                 className="rounded-full w-[90%] aspect-square p-1"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold py-5 text-center">
+            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold pt-5 text-center">
               {name}
             </h2>
+            <h3 className="text-lg font-normal text-color-secondary">( Wizard )</h3>
           </div>
 
-          {["Bumps:", "Friends:", "Clans:"].map((item) => (
+          {["Bumps: 62", "Friends: 34", "Clans: 2"].map((item) => (
             <div>
               <h2 className="text-lg lg:text-2xl text-color-primary font-[500] py-0 sm:py-1 md:py-3">
                 {item}
@@ -93,9 +94,9 @@ const Profile = ({ toggleProfile, name, address }) => {
               Clans
             </h2>
             <div className="flex flex-col lg:flex-row h-[80%] sm:h-[60%] gap-2 p-4 sm:p-1 overflow-x-hidden md:overflow-x-auto overflow-y-auto lg:overflow-y-hidden">
-              <Card text={"BGMI"} />
-              <Card text={"FreeFire"} />
-              <Card text={"Valorant"} />
+              <Card text={"BGMI"} link={"bgmi"} toggleProfile={toggleProfile} />
+              <Card text={"FreeFire"} link={"freefire"} toggleProfile={toggleProfile}/>
+              <Card text={"Valorant"} link={"valorant"} toggleProfile={toggleProfile}/>
             </div>
           </div>
           <div className="bg-bg-secondary h-[80%] sm:h-[60%] rounded-3xl border-color-primary border-2 p-5">
