@@ -29,8 +29,8 @@ function App() {
       <Profile toggleProfile={toggleProfile}/>
       </div>
 
-      {/* <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-blend-darken dark:bg-blur-3xl z-10 ">
-      {auth.loading ? (
+      <div className="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] bg-blend-darken dark:bg-blur-3xl z-10 ">
+      {/* {auth.loading ? (
         "Loading"
       ) : auth.isLoggedIn ? (
         <p>Logged In</p>
@@ -38,8 +38,8 @@ function App() {
         <div>
           <Auth externalWallet={true} theme={"dark"} onLogin={onLogin}/>
         </div>
-      )}
-    </div> */}
+      )} */}
+    </div>
 
       <Routes>
         <Route path="/" element={<Home />}></Route>

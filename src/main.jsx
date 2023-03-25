@@ -13,10 +13,9 @@ const auth = new AuthProvider(`${appAddress}`, {
   theme: "dark",
   alwaysVisible: false,
   chainConfig: {
-    chainId: CHAIN.POLYGON_MUMBAI_TESTNET,
-    rpcUrl:
-      "https://fragrant-greatest-sky.matic-testnet.discover.quiknode.pro/51a324530a248242144de9b79fc28e6f2272e30d/",
-  },
+    chainId: CHAIN.ETHEREUM_GOERLI ,
+    rpcUrl: 'https://eth-goerli.g.alchemy.com/v2/mzbwFJs7hwpG5epgv_VYc1r46QzPtrh4',
+    },
 });
 
 async function initialise() {
