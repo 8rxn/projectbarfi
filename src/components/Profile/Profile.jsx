@@ -27,9 +27,10 @@ const Profile = ({ toggleProfile, name }) => {
                 className="rounded-full w-[90%] aspect-square p-1"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold py-5 text-center">
+            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold pt-5 text-center">
               {name}
             </h2>
+            <h3 className="text-lg font-normal text-color-secondary">( Wizard )</h3>
           </div>
 
           {["Bumps: 62", "Friends: 34", "Clans: 2"].map((item) => (
