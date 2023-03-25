@@ -23,6 +23,7 @@ function App() {
   }, [profileActive]);
   const [checked, setChecked] = useState(false);
   const [checkedStreak, setCheckedStreak] = useState(0);
+  const [address, setAddress] = useState("");
 
 
 
@@ -32,6 +33,10 @@ function App() {
     const name = user.name;
     // const user = await arcanaProvider.getUser();
     setUserName(name);
+    const useraddress = user.address;
+    setAddress(useraddress);
+    // console.log(useraddress);
+
   }
 
   async function getLastChecked() {
