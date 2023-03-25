@@ -22,7 +22,7 @@ function App() {
     <>
       <NavBar toggleProfile={toggleProfile} />
 
-      <div className={` h-screen z-10 fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] grid place-items-center w-[100vw] shadow dark:bg-white/5 ${!profileActive?"hidden":""} `}>
+      <div className={` h-screen z-40 fixed left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] grid place-items-center w-[100vw] shadow dark:bg-white/5 ${!profileActive?"hidden":""} `}>
       <Profile toggleProfile={toggleProfile}/>
       </div>
       {!loginState && <div className=" h-screen w-screen fixed left-0 top-0 z-50 backdrop-blur-md">
