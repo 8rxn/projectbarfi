@@ -4,7 +4,7 @@ import images from "../../config/images";
 
 function Features() {
   return (
-    <div className="min-h-screen bg-gradient-to-t from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col items-center justify-center p-4">
+    <div id="features" className="min-h-screen bg-gradient-to-t from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col items-center justify-center p-4">
       <div className="bg-[#ffffff1f] border-[2px] border-color-primary flex flex-col items-center rounded-md">
         <div className="flex flex-col justify-center items-center p-8 gap-8">
           <div className="flex flex-col items-center justify-center">

@@ -4,7 +4,7 @@ import images from "../../config/images";
 
 function HeroSection() {
   return (
-    <div className="h-screen bg-gradient-to-b from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col items-center">
+    <div id="hero" className="h-screen bg-gradient-to-b from-bg-primary to-bg-secondary text-color-primary pt-10 flex flex-col items-center">
       <div className="flex flex-col items-center my-auto gap-y-2 md:gap-y-4 text-center">
         <h2 className=" text-3xl md:text-6xl font-bold ">
           GAMING MADE SOCIAL{" "}
