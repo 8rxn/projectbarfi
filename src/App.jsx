@@ -91,7 +91,7 @@ function App() {
   useEffect(() => {
     onStart();
     getLastChecked();
-},[])
+})
   
 
   return (
