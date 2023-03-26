@@ -6,22 +6,26 @@
 
 
 ## Introduction:
-  Brief description of the project
+  TribeTango is a platform for our fellow gamers to connect and interact with each other while making this whole process fun and rewarding just like a game.
   
 ## Demo Video Link:
   <a href="https://youtu.be/dQw4w9WgXcQ">https://youtu.be/dQw4w9WgXcQ</a>
   
 ## Presentation Link:
-  <a href="https://cutt.ly/Hack36_23_ppt"> PPT link here </a>
+  <a href="https://docs.google.com/presentation/d/1LJrlkhTtUTwfygMw_1fn8Dl39CRSJmi0/edit?usp=share_link&ouid=109093468618715352530&rtpof=true&sd=true"> PPT link here </a>
   
   
 ## Table of Contents:
 
 ## Technology Stack:
-  1) Flutter
-  2) Google Collab
-  3) JavaFX
-  4) Machine Learning
+  1) React Js
+  2) Tailwind CSS
+  3) Solidity
+  4) Firebase Firestore
+  5) Ethers Js
+  6) Arcana Auth
+  7) Verbwire API
+  8) GitHub
   
 
 ## Contributors:
