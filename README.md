@@ -9,7 +9,7 @@
   TribeTango is a platform for our fellow gamers to connect and interact with each other while making this whole process fun and rewarding just like a game.
   
 ## Demo Video Link:
-  <a href="https://youtu.be/nXB9dB_3f7w">https://youtu.be/dQw4w9WgXcQ</a>
+  <a href="https://youtu.be/nXB9dB_3f7w">https://youtu.be/nXB9dB_3f7</a>
   
 ## Presentation Link:
   <a href="https://docs.google.com/presentation/d/1LJrlkhTtUTwfygMw_1fn8Dl39CRSJmi0/edit?usp=share_link&ouid=109093468618715352530&rtpof=true&sd=true"> PPT link here </a>
