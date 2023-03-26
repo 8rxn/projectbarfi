@@ -8,31 +8,48 @@ function NFTCards({ img, imgalt, name, desc, mintable, address }) {
   const [mintableSts, setMintable] = useState(mintable);
 
   async function mintNFT() {
-    
 
+
+const options = {
+  method: 'POST',
+  url: 'https://api.verbwire.com/v1/nft/mint/mintFromMetadata',
+  headers: {
+    accept: 'application/json',
+    'content-type': 'multipart/form-data; boundary=---011000010111000001101001',
+    'X-API-Key': 'sk_live_c615218c-e6be-4769-b0ca-3136f69d4fd3'
+  },
+  data: `-----011000010111000001101001\r\nContent-Disposition: form-data; name="quantity"\r\n\r\n1\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="chain"\r\n\r\ngoerli\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="imageUrl"\r\n\r\nhttps://ipfs.io/ipfs/bafkreicy4uowemmnnphzrrc5w2soxcrrsi7d76p62usn4fl46flffrpej4\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="name"\r\n\r\nStreakReward\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="contractAddress"\r\n\r\n0x5C35FAfa9BD49e273E94140D5092FaD4a6821cdb\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="recipientAddress"\r\n\r\n${address}\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="data"\r\n\r\ndata\r\n-----011000010111000001101001--\r\n\r\n`
+};
+
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+  }
+
+  async function verifyNFT() {
     const options = {
-      method: "POST",
-      url: "https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl",
+      method: "GET",
+      url: "https://api.verbwire.com/v1/nft/data/owned?walletAddress=0x171a893e5675092304ccC4bf0d2335d553ABD81A&chain=ethereum",
       headers: {
         accept: "application/json",
-        "content-type":
-          "multipart/form-data; boundary=---011000010111000001101001",
         "X-API-Key": "sk_live_c615218c-e6be-4769-b0ca-3136f69d4fd3",
       },
-      data: `-----011000010111000001101001\r\nContent-Disposition: form-data; name="quantity"\r\n\r\n1\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="chain"\r\n\r\ngoerli\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="allowPlatformToOperateToken"\r\n\r\ntrue\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="contractAddress"\r\n\r\n0x5C35FAfa9BD49e273E94140D5092FaD4a6821cdb\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="metadataUrl"\r\n\r\nhttps://ipfs.io/ipfs/bafkreiapcd66nwkhj4meozmkewv2i6f33y6rfzxu6p7mfl3m4lj5uabpou\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="recipientAddress"\r\n\r\n${address}\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="contractType"\r\n\r\nnft721\r\n-----011000010111000001101001--\r\n\r\n`,
     };
 
     axios
       .request(options)
       .then(function (response) {
-        if(response.data.status == "Sent"){setMintable("minted")}
+        console.log(response.data);
       })
       .catch(function (error) {
         console.error(error);
       });
   }
-
-  async function verifyNFT() {}
 
   function mintButton() {
     if (mintable == "true") {

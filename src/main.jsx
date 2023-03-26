@@ -11,7 +11,7 @@ const auth = new AuthProvider(`${appAddress}`, {
   network: "testnet",
   position: "right",
   theme: "dark",
-  alwaysVisible: false,
+  alwaysVisible: true,
   chainConfig: {
     chainId: CHAIN.ETHEREUM_GOERLI,
     rpcUrl:
