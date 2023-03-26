@@ -6,7 +6,54 @@ import NFTCards from "../NFTCards/NFTCards";
 import Card from "./ClanCard";
 import { useEffect } from "react";
 
-const Profile = ({ toggleProfile, name }) => {
+const Profile = ({ toggleProfile, name, address }) => {
+  const NFTList = [
+    {
+      name: "Pupil",
+      desc: "Levelled up to become a Muggle",
+      mintable: "verify",
+    },
+    {
+      name: "Well Seasoned",
+      desc: "Levelled up to become a wizard",
+      mintable: "true",
+    },
+    {
+      name: "The Luker",
+      desc: "Made a check-in streak of 30 days",
+      mintable: "false",
+    },
+    {
+      name: "Master Bump-er",
+      desc: "Made a bump streak for 15 days",
+      mintable: "false",
+    },
+    {
+      name: "Social Butterfly",
+      desc: "Messaged daily in a clan for 7 days straight",
+      mintable: "false",
+    },
+    {
+      name: "The Chatterbox",
+      desc: "Spent a total of 100 hours chatting in clan",
+      mintable: "false",
+    },
+    {
+      name: "The Chatty Cathy",
+      desc: "Active for 7 days in three clans",
+      mintable: "false",
+    },
+    {
+      name: "Trend-Setter",
+      desc: "Helped to introduce a new game",
+      mintable: "false",
+    },
+    {
+      name: "Big Spender",
+      desc: "Bought an NFT through in-app purchases",
+      mintable: "false",
+    },
+  ];
 
   return (
     <div className="w-[80%] h-[90%] rounded-2xl  bg-bg-primary md:overflow-hidden overflow-y-scroll">
@@ -27,12 +74,13 @@ const Profile = ({ toggleProfile, name }) => {
                 className="rounded-full w-[90%] aspect-square p-1"
               />
             </div>
-            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold py-5 text-center">
+            <h2 className="text-2xl lg:text-3xl text-color-primary font-bold pt-5 text-center">
               {name}
             </h2>
+            <h3 className="text-lg font-normal text-color-secondary">( Wizard )</h3>
           </div>
 
-          {["Bumps:", "Friends:", "Clans:"].map((item) => (
+          {["Bumps: 62", "Friends: 34", "Clans: 2"].map((item) => (
             <div>
               <h2 className="text-lg lg:text-2xl text-color-primary font-[500] py-0 sm:py-1 md:py-3">
                 {item}
@@ -56,43 +104,9 @@ const Profile = ({ toggleProfile, name }) => {
               Your NFTs
             </h2>
             <div className="flex flex-col h-[80%] w-full overflow-y-scroll p-4 sm:p-1 gap-2">
-              <NFTCards
-                name={"Pupil"}
-                desc={"Levelled up to become a Muggle"}
-              />
-              <NFTCards
-                name={"Well Seasoned"}
-                desc={"Levelled up to become a wizard"}
-              />
-              <NFTCards
-                name={"The Lurker"}
-                desc={"Made a check-in streak of 30 days"}
-              />
-              <NFTCards
-                name={"Master Bump-er"}
-                desc={"Made a bump streak for 15 days"}
-              />
-              <NFTCards
-                name={"Social Butterfly"}
-                desc={"Messaged daily in a clan for 7 days straight"}
-              />
-              <NFTCards
-                name={"The Chatterbox"}
-                desc={"Spent a total of 100 hours chatting in clan"}
-              />
-              <NFTCards
-                name={"The Chatty Cathy"}
-                desc={"Active for 7 days in three clans"}
-              />
-              <NFTCards
-                name={"Trend-Setter"}
-                desc={"Helped to introduce a new game"}
-              />
-              <NFTCards name={"Master Minter"} desc={"Win all free NFTs"} />
-              <NFTCards
-                name={"Big Spender"}
-                desc={"Bought an NFT through in-app purchases"}
-              />
+              {NFTList.map((item) => (
+                <NFTCards name={item.name} desc={item.desc} mintable={item.mintable} address={address} />
+              ))}
             </div>
           </div>
         </div>

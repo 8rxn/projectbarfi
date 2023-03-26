@@ -19,7 +19,7 @@ function Friends() {
           </h2>
         </div>
 
-        {["Bumps:", "Online"].map((item) => (
+        {["Bumps: 12", "Online"].map((item) => (
           <div>
             <h2 className="text-xl text-color-primary/80 font-bold py-5">
               {item}
