@@ -5,18 +5,14 @@ import images from "../../config/images";
 import NFTCards from "../NFTCards/NFTCards";
 import Card from "./ClanCard";
 import { useEffect } from "react";
+import SampleNFT from "../NFTCards/SampleNFT"
 
 const Profile = ({ toggleProfile, name, address }) => {
   const NFTList = [
     {
-      name: "Pupil",
-      desc: "Levelled up to become a Muggle",
+      name: "GOAT Gamer",
+      desc: "Levelled up to become a Wizard",
       mintable: "verify",
-    },
-    {
-      name: "Well Seasoned",
-      desc: "Levelled up to become a wizard",
-      mintable: "true",
     },
     {
       name: "The Luker",
@@ -104,6 +100,7 @@ const Profile = ({ toggleProfile, name, address }) => {
               Your NFTs
             </h2>
             <div className="flex flex-col h-[80%] w-full overflow-y-scroll p-4 sm:p-1 gap-2">
+              <SampleNFT/>
               {NFTList.map((item) => (
                 <NFTCards name={item.name} desc={item.desc} mintable={item.mintable} address={address} />
               ))}
