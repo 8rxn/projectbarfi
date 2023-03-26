@@ -1,6 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import { AiOutlineQuestionCircle } from "react-icons/ai";
 
 function NFTCards() {
+  const [mint, setMint] = useState(false);
+  const [nft, setNFT]= useState(false);
+  const handleClick = ()=> {
+    setMint(true);
+    setNFT(true);
+  }
 
   return (
     <div className="w-full bg-bg-primary p-2 rounded-bl-xl rounded-tr-xl border-[1px] border-color-primary flex flex-col sm:flex-row justify-between items-start gap-2">
@@ -9,7 +16,10 @@ function NFTCards() {
           <img
             src="https://ipfs.io/ipfs/bafkreicy4uowemmnnphzrrc5w2soxcrrsi7d76p62usn4fl46flffrpej4"
             alt="NFT"
-            className={`object-cover`}
+            className={`object-cover ${nft === false ? "hidden" : ""}`}
+          />
+          <AiOutlineQuestionCircle
+            className={`text-3xl transition-2 delay-300 ${nft === true ? "hidden" : ""}`}
           />
         </div>
         <div>
@@ -18,9 +28,14 @@ function NFTCards() {
         </div>
       </div>
       <button
-        className={`rounded-xl py-1 px-4 border-[1px] text-color-primary justify-self-end`}
+        className={`rounded-xl py-1 px-4 border-[1px] text-color-primary border-color-primary justify-self-end ${mint === false ? "hidden" : ""}`}
       >
         Minted!
+      </button>
+      <button
+        className={`rounded-xl py-1 px-4 border-[1px] text-color-primary border-color-primary justify-self-end ${mint === false ? "" : "hidden"}`}
+        onClick={handleClick}>
+        Mint
       </button>
     </div>
   );
