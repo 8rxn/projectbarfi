@@ -1,47 +1,46 @@
 import React, { useState } from "react";
 import { AiOutlineQuestionCircle } from "react-icons/ai";
+import axios from "axios";
 
 function NFTCards({ img, imgalt, name, desc, mintable, address }) {
   const [earned, setEarned] = useState(false);
   const [mintStatus, setMintStatus] = useState(false);
+  const [mintableSts, setMintable] = useState(mintable);
 
   async function mintNFT() {
-    const FormData = require("form-data");
-    const fetch = require("node-fetch");
-    const formData = new FormData();
+    
 
-    formData.append("quantity", "1");
-    formData.append("chain", "goerli");
-    formData.append("allowPlatformToOperateToken", "true");
-    formData.append(
-      "contractAddress",
-      "0x5C35FAfa9BD49e273E94140D5092FaD4a6821cdb"
-    );
-    formData.append(
-      "metadataUrl",
-      "https://ipfs.io/ipfs/bafkreiapcd66nwkhj4meozmkewv2i6f33y6rfzxu6p7mfl3m4lj5uabpou"
-    );
-    formData.append(
-      "recipientAddress",
-      address
-    );
-    formData.append("contractType", "nft721");
-
-    const url = "https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl";
     const options = {
       method: "POST",
+      url: "https://api.verbwire.com/v1/nft/mint/mintFromMetadataUrl",
       headers: {
         accept: "application/json",
+        "content-type":
+          "multipart/form-data; boundary=---011000010111000001101001",
         "X-API-Key": "sk_live_c615218c-e6be-4769-b0ca-3136f69d4fd3",
       },
+      data: `-----011000010111000001101001\r\nContent-Disposition: form-data; name="quantity"\r\n\r\n1\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="chain"\r\n\r\ngoerli\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="allowPlatformToOperateToken"\r\n\r\ntrue\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="contractAddress"\r\n\r\n0x5C35FAfa9BD49e273E94140D5092FaD4a6821cdb\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="metadataUrl"\r\n\r\nhttps://ipfs.io/ipfs/bafkreiapcd66nwkhj4meozmkewv2i6f33y6rfzxu6p7mfl3m4lj5uabpou\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="recipientAddress"\r\n\r\n${address}\r\n-----011000010111000001101001\r\nContent-Disposition: form-data; name="contractType"\r\n\r\nnft721\r\n-----011000010111000001101001--\r\n\r\n`,
     };
 
-    options.body = formData;
+    axios
+      .request(options)
+      .then(function (response) {
+        if(response.data.status == "Sent"){setMintable("minted")}
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
 
-    fetch(url, options)
-      .then((res) => res.json())
-      .then((json) => console.log(json))
-      .catch((err) => console.error("error:" + err));
+  async function verifyNFT() {}
+
+  function mintButton() {
+    if (mintable == "true") {
+      mintNFT();
+    }
+    if (mintable == "verify") {
+      verifyNFT();
+    }
   }
 
   return (
@@ -68,13 +67,15 @@ function NFTCards({ img, imgalt, name, desc, mintable, address }) {
             ? "bg-slate-400 text-bg-primary cursor-not-allowed"
             : "text-color-primary bg-bg-secondary"
         }`}
-        onClick = {mintButton}
+        onClick={mintButton}
       >
-        
-          {
-            mintable==="verify"?"Verify":mintable==="verified"?"Verified":"Mint" 
-          }
-
+        {mintableSts === "verify"
+          ? "Verify"
+          : mintableSts === "verified"
+          ? "Verified"
+          : mintableSts === "minted"
+          ? "Minted"
+          : "Mint"}
       </button>
     </div>
   );
