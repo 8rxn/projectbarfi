@@ -3,7 +3,7 @@ import Card from './Card'
 import images from '../../config/images'
 function Carousel() {
   return (
-    <div className='box-border flex lg:overflow-x-auto overflow-x-scroll gap-4 w-[92vw] scroll-m-3 p-2'>
+    <div className='flex lg:overflow-x-auto overflow-x-scroll gap-4 w-[92vw] 2xl:w-fit scroll-m-3 p-2'>
       <Card src={images.BGMI.src} alt={images.BGMI.alt} text={"BGMI"} link="bgmi"/>
       <Card src={images.FreeFire.src} alt={images.FreeFire.alt} text={"FreeFire"} link="freefire"/>
       <Card src={images.Valorant.src} alt={images.Valorant.alt} text={"Valorant"} link="valorant"/>
