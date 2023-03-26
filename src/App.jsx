@@ -124,7 +124,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/comrade" element={<Friends />} />
-        <Route path="/clan/:id" name={username} publicKey={address} element={<Clan />} />
+        <Route path="/clan/:id"  element={<Clan senderName={username} publicKey={address}/>} />
         <Route path="/*" element={<NotYet />} />
         {/* This will be default path when login will be setup */}
         <Route path="/home" element={<Home />} />

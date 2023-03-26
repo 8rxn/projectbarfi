@@ -13,7 +13,10 @@ import {
   serverTimestamp,setDoc
 } from "firebase/firestore";
 
+import images from '../config/images'
+
 function Message({item,senderPublicKey}) {
+
   return (
     <div className="flex bg-bg-primary w-fit p-2 gap-2 rounded-r-xl rounded-bl-xl shadow-lg">
       <h3 className="text-xs text-color-secondary">({item?.role?item?.role:"NPC"})</h3>
@@ -24,14 +27,39 @@ function Message({item,senderPublicKey}) {
   );
 }
 
-function Clan({name,publicKey}) {
+function Clan({senderName,publicKey}) {
+
+   const clanLogoUrl=(id)=>{
+    if(id==="bgmi"){
+        return images.BGMI.src
+    }
+    else if(id==="freefire"){
+        return images.FreeFire.src
+    }
+    else if(id==="valorant"){
+        return images.Valorant.src
+    }
+    else if(id==="clashofclans"){
+        return images.ClashOfClans.src
+    }
+    else if(id==="grandtheftauto"){
+        return images.GTA.src
+    }
+    else{
+
+        if(id==="smashkarts"){
+            return images.SmashKarts.src
+        }
+    }
+    return ""
+   }
+
   const [messages, setMessages] = useState([]);
   const [message, setMessage] = useState("");
   const { id } = useParams();
   const clanRef = collection(db, `${id}`);
   const q = query(clanRef, orderBy("createdAt"), limit(25));
 
-  const senderName=name;
   const senderPublicKey=publicKey;
 
 
@@ -63,8 +91,8 @@ function Clan({name,publicKey}) {
   const sendMessage=async()=>{
     const sendData={
         createdAt: serverTimestamp(),
-        name: senderName || "username-undefined" ,
-        publicKey: senderPublicKey || "undefined",
+        name: senderName,
+        publicKey: senderPublicKey ,
         text : message || "Message not sent due to undefined user"
     }
     await setDoc(doc(clanRef),sendData );
@@ -77,7 +105,7 @@ function Clan({name,publicKey}) {
         <div className="flex items-center flex-col">
           <div className="rounded-full  border-color-primary border-2 border-spacing-64 p-auto grid place-items-center w-[85%] aspect-square">
             <img
-              src={""}
+              src={clanLogoUrl(id)}
               alt="Clan Logo"
               className="rounded-full w-[92%] aspect-square "
             />
@@ -87,7 +115,7 @@ function Clan({name,publicKey}) {
           </h2>
         </div>
 
-        {["Total Members:", "Online:"].map((item) => (
+        {["Total Members: 16", "Online: 4"].map((item) => (
           <div>
             <h2 className="text-xl text-color-primary/80 font-bold py-5">
               {item}
